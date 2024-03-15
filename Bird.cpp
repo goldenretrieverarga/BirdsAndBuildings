@@ -22,7 +22,7 @@ void Bird::update()
     else if(movement == DROPPING)
     {
         int bottom = 0;
-        Building * b = this->world->buildingBelow(x);
+        Building * b = this->world->buildingBelow(y,x);
         if(b != NULL)
             bottom = b->top();
         if(y < bottom)

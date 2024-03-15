@@ -1,3 +1,9 @@
+class World;
+#ifndef _BUILDING_H_
+#define _BUILDING_H_
+
+#include "World.h"
+
 #define BLOCKSIZE 20
 
 
@@ -15,8 +21,10 @@ class Building
     int bottom();
     int right();
     bool onBuilding(int y, int x);
-    bool aboveBuilding(int y, int);
+    bool aboveBuilding(int y, int x);
 
 
 
 };
+
+#endif

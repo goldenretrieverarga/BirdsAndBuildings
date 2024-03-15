@@ -1,3 +1,9 @@
+class Bird;
+class Building;
+
+#ifndef _WORLD_H_
+#define _WORLD_H_
+
 #include <vector>
 #include "Bird.h"
 #include "Building.h"
@@ -16,8 +22,13 @@ class World
     int width;
     int height;
     World(int w, int h);
+    bool onBuilding(int y, int x);
+    Building * buildingBelow(int y, int x);
     void goToNextFrame();
     void draw();
 
     
 };
+
+#endif
+ 

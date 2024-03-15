@@ -14,12 +14,12 @@ int Building::left()
 
 bool Building::onBuilding(int y, int x)
 {
-    return y < coordinateTop() && x > coordinateLeft();
+    return y < top()  && x > left();
 }
 
 bool Building::aboveBuilding(int y,int x)
 {
-    return y > coordinateTop();
+    return y > top();
 }
 
 void Building::draw()

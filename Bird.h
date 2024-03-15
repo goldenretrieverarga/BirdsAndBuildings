@@ -1,5 +1,6 @@
-#ifndef WORLD_H_
-#define WORLD_H_
+class World;
+#ifndef BIRD_H_
+#define BIRD_H_
 
 #include "World.h"
 
@@ -17,6 +18,8 @@ class Bird
         Bird();
         void update();
         void draw();
+        void fly();
+        void drop();
 
 
 

@@ -13,6 +13,8 @@ void World::goToNextFrame()
         bird.update();
     }
 
+    //buildings do not move, so there's nothing to update there right now
+
 
 }
 
@@ -32,7 +34,7 @@ void World::draw()
 
 bool World::onBuilding(int y,int x)
 {
-    for(Building &building: buildings)
+    for(Building &building: buildings) // any onbuilding?
     {
         if(building.onBuilding(y,x))
             return true;
@@ -42,11 +44,14 @@ bool World::onBuilding(int y,int x)
     return false;
 }
 
-Building * World::buildingBelow(int x)
+Building * World::buildingBelow(int y,int x)
 {
     for(Building& building: buildings)
     {
-        return &building;
+        if(building.left() < x && building.right() > x) 
+            if(y >= building.top())
+                return &building;
+
     }
 
     return NULL;
